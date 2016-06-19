@@ -9,9 +9,41 @@
             <Trigger Property="Button.IsDefaulted" Value="True">
                 <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
             </Trigger>
+
+            <EventTrigger RoutedEvent="Mouse.MouseEnter">
+                <EventTrigger.Actions>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation Duration="0:0:0.4"
+                                             Storyboard.TargetProperty="Background.Color"
+                                             To="#FFF3EFEA"
+                                             Storyboard.TargetName="border">
+                            </ColorAnimation>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger.Actions>
+            </EventTrigger>
+
+            <EventTrigger RoutedEvent="Mouse.MouseLeave">
+                <EventTrigger.Actions>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation Duration="0:0:0.4"
+                                             Storyboard.TargetProperty="Background.Color"
+                                             To="Transparent"
+                                             Storyboard.TargetName="border">
+                            </ColorAnimation>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger.Actions>
+            </EventTrigger>
+
             <Trigger Property="IsMouseOver" Value="True">
+                <!-- 
                 <Setter Property="Background" TargetName="border" Value="#FFF3EFEA"/>
                 <Setter Property="BorderBrush" TargetName="border" Value="#FFF3EFEA"/>
+                -->
+
             </Trigger>
             <Trigger Property="IsPressed" Value="True">
                 <Setter Property="Background" TargetName="border" Value="#FFC4E5F6"/>

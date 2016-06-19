@@ -33,14 +33,20 @@
                 </Button>
             </Grid>
 
-            <Button Grid.Column="0" Margin="4 4 0 4" Template="{DynamicResource MetroButtonStyle}">
+            <Button x:Name="button1" Grid.Column="0" Margin="4 4 0 4" Template="{StaticResource MetroButtonStyle}">
+                <Button.Triggers>
+                    <EventTrigger RoutedEvent="Mouse.MouseEnter">
+                        <EventTrigger.Actions>
+                        </EventTrigger.Actions>
+                    </EventTrigger>
+                </Button.Triggers>
                 <Image Source="image/icon/appbar.list.gear.png"></Image>
             </Button>
 
-            <TextBlock Grid.Column="1" Width="auto" Height="auto" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20">Iris 2D Game Maker</TextBlock>
+            <TextBlock Grid.Column="1" Width="auto" Height="auto" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="15">Iris 2D Game Maker</TextBlock>
             
         </Grid>
         <Border Grid.Row="0" BorderBrush="Black" BorderThickness="1 1 1 0"></Border>
-        <Border Grid.Row="1" BorderBrush="Black" BorderThickness="1"></Border>
+        <Border Grid.Row="1" BorderBrush="Black" BorderThickness="1"/>
     </Grid>
 </Window>
