@@ -19,7 +19,26 @@ namespace Iris_2D_Game_Maker {
     /// </summary>
     public partial class MainWindow : Window {
         public MainWindow() {
-            InitializeComponent();
+             InitializeComponent();
+            _RegistEvent();
+        }
+
+        private void _RegistEvent() {
+            btn_Close.Click += Btn_Close_Click;
+            btn_Minimize.Click += Btn_Minimize_Click;
+            lb_Title.MouseLeftButtonDown += Txt_Title_MouseLeftButtonDown;
+        }
+
+        private void Txt_Title_MouseLeftButtonDown(object sender, MouseButtonEventArgs e) {
+            this.DragMove();
+        }
+
+        private void Btn_Minimize_Click(object sender, RoutedEventArgs e) {
+            this.WindowState = WindowState.Minimized;
+        }
+
+        private void Btn_Close_Click(object sender, RoutedEventArgs e) {
+            Application.Current.Shutdown();
         }
     }
 }
